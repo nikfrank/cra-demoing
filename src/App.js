@@ -5,6 +5,18 @@ import './App.css';
 import FancyButton from './FancyButton';
 
 class App extends Component {
+
+  constructor(){
+    super();
+    this.state = {
+      textColour: 'red'
+    };
+  }
+  
+  changeTextColour = () => {
+    this.setState({ textColour: 'blue' });
+  }
+  
   render() {
     return (
       <div className="App">
@@ -19,7 +31,10 @@ class App extends Component {
             </p>
           ) )
         }
-        <FancyButton />    
+        <FancyButton textColour={this.state.textColour}
+                     onClick={this.changeTextColour}>
+          You should
+        </FancyButton>    
       </div>
     );
   }

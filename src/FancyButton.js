@@ -4,8 +4,12 @@ class FancyButton extends Component {
   render() {
     return (
       <div>
-        <p>You should</p>
-        <button>Click Me!</button>
+        <p style={{color:this.props.textColour}}>
+          {this.props.children}
+        </p>
+        <button onClick={this.props.onClick}>
+          Click Me!
+        </button>
       </div>
     );
   }
